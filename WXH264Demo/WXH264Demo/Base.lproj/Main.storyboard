@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="15G1108" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0P9-79-Iwr">
+                                <rect key="frame" x="156" y="258.5" width="62" height="30"/>
+                                <state key="normal" title="开始采集"/>
+                                <connections>
+                                    <action selector="openCamera:" destination="BYZ-38-t0r" eventType="touchUpInside" id="kBc-L4-DRT"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PNI-o9-49V">
+                                <rect key="frame" x="149" y="318.5" width="77" height="30"/>
+                                <state key="normal" title="切换摄像头"/>
+                                <connections>
+                                    <action selector="switchCamera:" destination="BYZ-38-t0r" eventType="touchUpInside" id="NoG-6P-zxa"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="33a-JK-gS7">
+                                <rect key="frame" x="156.5" y="378.5" width="62" height="30"/>
+                                <state key="normal" title="停止采集"/>
+                                <connections>
+                                    <action selector="stopCamera:" destination="BYZ-38-t0r" eventType="touchUpInside" id="SfK-5g-1D1"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="33a-JK-gS7" firstAttribute="top" secondItem="PNI-o9-49V" secondAttribute="bottom" constant="30" id="4zw-Oy-L1h"/>
+                            <constraint firstItem="PNI-o9-49V" firstAttribute="top" secondItem="0P9-79-Iwr" secondAttribute="bottom" constant="30" id="Kqt-db-gab"/>
+                            <constraint firstItem="0P9-79-Iwr" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Loo-3L-aco"/>
+                            <constraint firstItem="PNI-o9-49V" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="Tbp-Dy-57b"/>
+                            <constraint firstItem="33a-JK-gS7" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="yfk-LJ-KG0"/>
+                            <constraint firstItem="PNI-o9-49V" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="zdJ-so-cPR"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="140" y="94.902548725637189"/>
+        </scene>
+    </scenes>
+</document>
