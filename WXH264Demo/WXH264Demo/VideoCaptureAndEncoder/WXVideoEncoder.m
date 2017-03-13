@@ -69,11 +69,9 @@
         CFNumberRef bitRateLimitRef = CFNumberCreate(kCFAllocatorDefault, kCFNumberSInt32Type, &bitRateLimit);
         VTSessionSetProperty(WEncodingSession, kVTCompressionPropertyKey_DataRateLimits, bitRateLimitRef);
         
-        
         //7、 Tell the encoder to start encoding 告诉编码器可以开始编码
         VTCompressionSessionPrepareToEncodeFrames(WEncodingSession);
     });
-    
     
     // 视频编码保存的路径
     NSString *filePath = [[NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject] stringByAppendingPathComponent:@"test.h264"];
@@ -83,6 +81,7 @@
     
     return WXResultNoErr;
 }
+
 
 - (WXResult)encode:(CVPixelBufferRef)pixelBuffer {
     
@@ -155,6 +154,18 @@ void didCompressH264(void *outputCallbackRefCon, void *sourceFrameRefCon, OSStat
                 if (encoder) {
                     [encoder gotSPS:sps withPPS:pps];
                 }
+                NALUnit spsUnit, ppsUnit;
+                spsUnit.data = malloc(sparameterSetSize);
+                memcpy(spsUnit.data, sparameterSet, sparameterSetSize);
+                spsUnit.type = 1;
+                spsUnit.size = (unsigned int)sparameterSetSize;
+                [encoder.delegate wxVideoEncoderOutputNALUnit:spsUnit fromVideoEncoder:encoder];
+                
+                ppsUnit.data = malloc(pparameterSetSize);
+                memcpy(ppsUnit.data, pparameterSet, pparameterSetSize);
+                ppsUnit.type = 2;
+                ppsUnit.size = (unsigned int)pparameterSetSize;
+                [encoder.delegate wxVideoEncoderOutputNALUnit:ppsUnit fromVideoEncoder:encoder];
             }
         }
     }
@@ -175,7 +186,6 @@ void didCompressH264(void *outputCallbackRefCon, void *sourceFrameRefCon, OSStat
          [redata getBytes:&result length:4];
          NSLog(@"前四个字节：%d",result);
          */
-        
         // 循环获取nalu数据
         while (bufferOffSet < totalLength - AVCCHeaderLength) {
             
@@ -184,11 +194,21 @@ void didCompressH264(void *outputCallbackRefCon, void *sourceFrameRefCon, OSStat
             memcpy(&NALUUnitLength, dataPointer + bufferOffSet, AVCCHeaderLength);
             //host Big－endian
             NALUUnitLength = CFSwapInt32BigToHost(NALUUnitLength);
+            
             //读取到数据
             NSData *data = [[NSData alloc] initWithBytes:(dataPointer + bufferOffSet + AVCCHeaderLength) length:NALUUnitLength];
             
             //写入文件
             [encoder gotEncodedData:data isKeyFrame:isKeyframe];
+            
+            NALUnit dataUnit;
+            dataUnit.data = malloc(NALUUnitLength);
+            memcpy(dataUnit.data, (dataPointer + bufferOffSet + AVCCHeaderLength), NALUUnitLength);
+            dataUnit.type = 3;
+            dataUnit.size = (unsigned int)NALUUnitLength;
+            [encoder.delegate wxVideoEncoderOutputNALUnit:dataUnit fromVideoEncoder:encoder];
+            
+//            free(dataUnit.data);
             
             //修改指针偏移量到下一个NAL unit区域
             // Move to the next NAL unit in the block buffer
