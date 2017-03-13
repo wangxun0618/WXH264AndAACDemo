@@ -95,7 +95,7 @@
 - (WXResult) setPreview: (UIView *)preview
                   frame: (CGRect)frame{
     AVCaptureVideoPreviewLayer *previedLayer = [AVCaptureVideoPreviewLayer layerWithSession:wx_captureSession];
-    previedLayer.frame = [UIScreen mainScreen].bounds;
+    previedLayer.frame = frame;
     [preview.layer insertSublayer:previedLayer atIndex:0];
     return WXResultNoErr;
 }

@@ -15,6 +15,8 @@
 		282112F31E6F9E8B0023FF1E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 282112F11E6F9E8B0023FF1E /* Main.storyboard */; };
 		282112F51E6F9E8B0023FF1E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 282112F41E6F9E8B0023FF1E /* Assets.xcassets */; };
 		282112F81E6F9E8B0023FF1E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 282112F61E6F9E8B0023FF1E /* LaunchScreen.storyboard */; };
+		285546A71E7680BB00684451 /* WXCAEAGLLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 285546A61E7680BB00684451 /* WXCAEAGLLayer.m */; };
+		28F58C831E72796B00C8B836 /* WXVideoDecoder.m in Sources */ = {isa = PBXBuildFile; fileRef = 28F58C821E72796B00C8B836 /* WXVideoDecoder.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,6 +35,10 @@
 		282112F71E6F9E8B0023FF1E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		282112F91E6F9E8B0023FF1E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		282113051E70150D0023FF1E /* PrefixHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.h; sourceTree = "<group>"; };
+		285546A51E7680BB00684451 /* WXCAEAGLLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXCAEAGLLayer.h; sourceTree = "<group>"; };
+		285546A61E7680BB00684451 /* WXCAEAGLLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WXCAEAGLLayer.m; sourceTree = "<group>"; };
+		28F58C811E72796B00C8B836 /* WXVideoDecoder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXVideoDecoder.h; sourceTree = "<group>"; };
+		28F58C821E72796B00C8B836 /* WXVideoDecoder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WXVideoDecoder.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,6 +61,15 @@
 				282112AD1E71031F0072ED1B /* WXVideoEncoder.m */,
 			);
 			path = VideoCaptureAndEncoder;
+			sourceTree = "<group>";
+		};
+		282112B01E7124B40072ED1B /* VideoDecoder */ = {
+			isa = PBXGroup;
+			children = (
+				28F58C811E72796B00C8B836 /* WXVideoDecoder.h */,
+				28F58C821E72796B00C8B836 /* WXVideoDecoder.m */,
+			);
+			path = VideoDecoder;
 			sourceTree = "<group>";
 		};
 		282112DC1E6F9E8B0023FF1E = {
@@ -80,6 +95,8 @@
 				282112EC1E6F9E8B0023FF1E /* AppDelegate.m */,
 				282112EE1E6F9E8B0023FF1E /* ViewController.h */,
 				282112EF1E6F9E8B0023FF1E /* ViewController.m */,
+				285546A41E7680BB00684451 /* CaeaglLayer */,
+				282112B01E7124B40072ED1B /* VideoDecoder */,
 				282112A91E71031F0072ED1B /* VideoCaptureAndEncoder */,
 				282112F11E6F9E8B0023FF1E /* Main.storyboard */,
 				282112F41E6F9E8B0023FF1E /* Assets.xcassets */,
@@ -97,6 +114,15 @@
 				282113051E70150D0023FF1E /* PrefixHeader.h */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		285546A41E7680BB00684451 /* CaeaglLayer */ = {
+			isa = PBXGroup;
+			children = (
+				285546A51E7680BB00684451 /* WXCAEAGLLayer.h */,
+				285546A61E7680BB00684451 /* WXCAEAGLLayer.m */,
+			);
+			path = CaeaglLayer;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -172,6 +198,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				282112AF1E71031F0072ED1B /* WXVideoEncoder.m in Sources */,
+				28F58C831E72796B00C8B836 /* WXVideoDecoder.m in Sources */,
+				285546A71E7680BB00684451 /* WXCAEAGLLayer.m in Sources */,
 				282112F01E6F9E8B0023FF1E /* ViewController.m in Sources */,
 				282112AE1E71031F0072ED1B /* WXVideoCapture.m in Sources */,
 				282112ED1E6F9E8B0023FF1E /* AppDelegate.m in Sources */,

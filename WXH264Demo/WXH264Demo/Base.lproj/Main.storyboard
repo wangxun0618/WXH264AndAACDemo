@@ -42,13 +42,31 @@
                                     <action selector="stopCamera:" destination="BYZ-38-t0r" eventType="touchUpInside" id="SfK-5g-1D1"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2EV-gk-e0s">
+                                <rect key="frame" x="172" y="438.5" width="31" height="30"/>
+                                <state key="normal" title="解码"/>
+                                <connections>
+                                    <action selector="decodeButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="cOB-2J-NSl"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="01O-nH-gMO">
+                                <rect key="frame" x="149" y="495" width="77" height="30"/>
+                                <state key="normal" title="销毁解码器"/>
+                                <connections>
+                                    <action selector="destroyButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="XEd-MT-VTL"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="2EV-gk-e0s" firstAttribute="top" secondItem="33a-JK-gS7" secondAttribute="bottom" constant="30" id="2N4-CF-Pah"/>
                             <constraint firstItem="33a-JK-gS7" firstAttribute="top" secondItem="PNI-o9-49V" secondAttribute="bottom" constant="30" id="4zw-Oy-L1h"/>
+                            <constraint firstItem="2EV-gk-e0s" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="9we-4g-f3q"/>
+                            <constraint firstItem="01O-nH-gMO" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="CZ9-l9-8dw"/>
                             <constraint firstItem="PNI-o9-49V" firstAttribute="top" secondItem="0P9-79-Iwr" secondAttribute="bottom" constant="30" id="Kqt-db-gab"/>
                             <constraint firstItem="0P9-79-Iwr" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Loo-3L-aco"/>
                             <constraint firstItem="PNI-o9-49V" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="Tbp-Dy-57b"/>
+                            <constraint firstItem="01O-nH-gMO" firstAttribute="top" secondItem="2EV-gk-e0s" secondAttribute="bottom" constant="30" id="rm8-bA-CJR"/>
                             <constraint firstItem="33a-JK-gS7" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="yfk-LJ-KG0"/>
                             <constraint firstItem="PNI-o9-49V" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="zdJ-so-cPR"/>
                         </constraints>

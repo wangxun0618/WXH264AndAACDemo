@@ -9,7 +9,16 @@
 #import <Foundation/Foundation.h>
 #import <VideoToolbox/VideoToolbox.h>
 
+@protocol WXVideoEncoderDelegate;
+
 @interface WXVideoEncoder : NSObject
+
+
+//delegate
+/**
+ *  视频编码代理
+ */
+@property (nonatomic, assign) id<WXVideoEncoderDelegate> delegate;
 
 /**
  创建资源
@@ -37,5 +46,20 @@
  @return 状态码
  */
 - (WXResult)endEncode;
+
+
+
+@end
+
+@protocol WXVideoEncoderDelegate <NSObject>
+
+/**
+ *  视频编码回调：注意不能卡住该回调，否则可能出现异常!!!
+ *
+ *  @param dataUnit 采集数据结构体：系统回调类型，
+ *  @param videoEncoder 采集类对象
+ */
+- (void) wxVideoEncoderOutputNALUnit: (NALUnit)dataUnit
+                         fromVideoEncoder: (const WXVideoEncoder *)videoEncoder;
 
 @end

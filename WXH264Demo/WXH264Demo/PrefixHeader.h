@@ -10,6 +10,7 @@
 #define PrefixHeader_h
 
 
+
 typedef enum {
     WXResultNoErr                                               = 0,
     //成功，无错误
@@ -34,5 +35,17 @@ typedef enum {
     //3840*2160
 } WXCaptureCameraQuality;
 
+typedef struct _NALUnit{
+    unsigned int type;
+    unsigned int size;
+    unsigned char *data;
+}NALUnit;
+
+typedef enum{
+    NALUTypeBPFrame = 0x01,
+    NALUTypeIFrame = 0x05,
+    NALUTypeSPS = 0x07,
+    NALUTypePPS = 0x08
+}NALUType;
 
 #endif /* PrefixHeader_h */
