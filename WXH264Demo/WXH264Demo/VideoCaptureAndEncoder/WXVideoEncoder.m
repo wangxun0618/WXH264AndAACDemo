@@ -47,7 +47,7 @@
         // kVTCompressionPropertyKey_ProfileLevel : Specifies the profile and level for the encoded bitstream.
         //3、设置实时编码输出
         VTSessionSetProperty(WEncodingSession, kVTCompressionPropertyKey_RealTime, kCFBooleanTrue);
-        VTSessionSetProperty(WEncodingSession, kVTCompressionPropertyKey_ProfileLevel, kVTProfileLevel_H264_Baseline_AutoLevel);
+        VTSessionSetProperty(WEncodingSession, kVTCompressionPropertyKey_ProfileLevel, kVTProfileLevel_H264_High_AutoLevel);
         
         //4、设置帧率(每秒多少帧,如果帧率过低,会造成画面卡顿，大于16，人眼就识别不出来了)
         int fps = 30;
