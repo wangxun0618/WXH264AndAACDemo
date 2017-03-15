@@ -87,12 +87,12 @@
     
     // 1、帧时间, 如果不设置会导致时间轴过长，根据当前的帧数,创建CMTime的时间
     CMTime presentationTimeStamp = CMTimeMake(currentFrame++, 1000);
-    VTEncodeInfoFlags flags;
     
     // 使用硬编码接口VTCompressionSessionEncodeFrame来对该帧进行硬编码
     // 编码成功后，会自动调用session初始化时设置的回调函数
     //2、开始编码当前帧
         //有关编码操作的信息（例如：正在进行，帧被丢弃等）
+    VTEncodeInfoFlags flags;
     OSStatus statusCode = VTCompressionSessionEncodeFrame(WEncodingSession, pixelBuffer, presentationTimeStamp, kCMTimeInvalid, NULL, NULL, &flags);
     if (statusCode != noErr) {
         NSLog(@"H264: VTCompressionSessionEncodeFrame failed with %d", (int)statusCode);
@@ -139,13 +139,23 @@ void didCompressH264(void *outputCallbackRefCon, void *sourceFrameRefCon, OSStat
         // 获取SPS信息
         size_t sparameterSetSize, sparameterSetCount;
         const uint8_t *sparameterSet;
-        OSStatus statusSPS = CMVideoFormatDescriptionGetH264ParameterSetAtIndex(format, 0, &sparameterSet, &sparameterSetSize, &sparameterSetCount, 0 );
+        OSStatus statusSPS = CMVideoFormatDescriptionGetH264ParameterSetAtIndex(format,
+                                                                                0,
+                                                                                &sparameterSet,
+                                                                                &sparameterSetSize,
+                                                                                &sparameterSetCount,
+                                                                                0);
         if (statusSPS == noErr) {
             // Found sps and now check for pps
             // pps
             size_t pparameterSetSize, pparameterSetCount;
             const uint8_t *pparameterSet;
-            OSStatus statusPPS = CMVideoFormatDescriptionGetH264ParameterSetAtIndex(format, 1, &pparameterSet, &pparameterSetSize, &pparameterSetCount, 0);
+            OSStatus statusPPS = CMVideoFormatDescriptionGetH264ParameterSetAtIndex(format,
+                                                                                    1,
+                                                                                    &pparameterSet,
+                                                                                    &pparameterSetSize,
+                                                                                    &pparameterSetCount,
+                                                                                    0);
             if (statusPPS == noErr) {
                 
                 // found sps pps
@@ -154,18 +164,6 @@ void didCompressH264(void *outputCallbackRefCon, void *sourceFrameRefCon, OSStat
                 if (encoder) {
                     [encoder gotSPS:sps withPPS:pps];
                 }
-                NALUnit spsUnit, ppsUnit;
-                spsUnit.data = malloc(sparameterSetSize);
-                memcpy(spsUnit.data, sparameterSet, sparameterSetSize);
-                spsUnit.type = 1;
-                spsUnit.size = (unsigned int)sparameterSetSize;
-                [encoder.delegate wxVideoEncoderOutputNALUnit:spsUnit fromVideoEncoder:encoder];
-                
-                ppsUnit.data = malloc(pparameterSetSize);
-                memcpy(ppsUnit.data, pparameterSet, pparameterSetSize);
-                ppsUnit.type = 2;
-                ppsUnit.size = (unsigned int)pparameterSetSize;
-                [encoder.delegate wxVideoEncoderOutputNALUnit:ppsUnit fromVideoEncoder:encoder];
             }
         }
     }
@@ -200,15 +198,6 @@ void didCompressH264(void *outputCallbackRefCon, void *sourceFrameRefCon, OSStat
             
             //写入文件
             [encoder gotEncodedData:data isKeyFrame:isKeyframe];
-            
-            NALUnit dataUnit;
-            dataUnit.data = malloc(NALUUnitLength);
-            memcpy(dataUnit.data, (dataPointer + bufferOffSet + AVCCHeaderLength), NALUUnitLength);
-            dataUnit.type = 3;
-            dataUnit.size = (unsigned int)NALUUnitLength;
-            [encoder.delegate wxVideoEncoderOutputNALUnit:dataUnit fromVideoEncoder:encoder];
-            
-//            free(dataUnit.data);
             
             //修改指针偏移量到下一个NAL unit区域
             // Move to the next NAL unit in the block buffer

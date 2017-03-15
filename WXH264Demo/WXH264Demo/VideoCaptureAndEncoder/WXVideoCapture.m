@@ -21,10 +21,10 @@
 @implementation WXVideoCapture
 
 - (WXResult) create {
-    
+    //1、创建回话捕捉
     AVCaptureSession *captureSession = [[AVCaptureSession alloc] init];
     wx_captureSession = captureSession;
-    
+    //2、设置输入输出
     AVCaptureDevice *captureDevice = [AVCaptureDevice  defaultDeviceWithMediaType:AVMediaTypeVideo];
     
     NSError *error;
@@ -47,6 +47,9 @@
     } else {
         return WXResultFail;
     }
+    //3、设置输出视频方向
+    AVCaptureConnection * connection = [videoOutput connectionWithMediaType:AVMediaTypeVideo];
+    [connection setVideoOrientation:AVCaptureVideoOrientationPortrait];
     
     return WXResultNoErr;
 }
@@ -141,6 +144,7 @@
 }
 
 - (void)captureOutput:(AVCaptureOutput *)captureOutput didOutputSampleBuffer:(CMSampleBufferRef)sampleBuffer fromConnection:(AVCaptureConnection *)connection {
+    
     CVPixelBufferRef buffer = CMSampleBufferGetImageBuffer(sampleBuffer);
     NSLog(@">>>width:%zu height: %zu",CVPixelBufferGetWidth(buffer),CVPixelBufferGetHeight(buffer));
     [self.delegate wxVideoCaptureOutputSampleBuffer:sampleBuffer fromVideoCapture:self];
