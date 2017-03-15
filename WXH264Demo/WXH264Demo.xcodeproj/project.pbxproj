@@ -7,23 +7,27 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		282112AE1E71031F0072ED1B /* WXVideoCapture.m in Sources */ = {isa = PBXBuildFile; fileRef = 282112AB1E71031F0072ED1B /* WXVideoCapture.m */; };
-		282112AF1E71031F0072ED1B /* WXVideoEncoder.m in Sources */ = {isa = PBXBuildFile; fileRef = 282112AD1E71031F0072ED1B /* WXVideoEncoder.m */; };
+		280345661E7908C7006E8163 /* WXCAEAGLLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 2803455B1E7908C7006E8163 /* WXCAEAGLLayer.m */; };
+		280345671E7908C7006E8163 /* WXVideoCapture.m in Sources */ = {isa = PBXBuildFile; fileRef = 2803455E1E7908C7006E8163 /* WXVideoCapture.m */; };
+		280345681E7908C7006E8163 /* WXVideoEncoder.m in Sources */ = {isa = PBXBuildFile; fileRef = 280345601E7908C7006E8163 /* WXVideoEncoder.m */; };
+		280345691E7908C7006E8163 /* WXVideoDecoder.m in Sources */ = {isa = PBXBuildFile; fileRef = 280345631E7908C7006E8163 /* WXVideoDecoder.m */; };
 		282112EA1E6F9E8B0023FF1E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 282112E91E6F9E8B0023FF1E /* main.m */; };
 		282112ED1E6F9E8B0023FF1E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 282112EC1E6F9E8B0023FF1E /* AppDelegate.m */; };
 		282112F01E6F9E8B0023FF1E /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 282112EF1E6F9E8B0023FF1E /* ViewController.m */; };
 		282112F31E6F9E8B0023FF1E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 282112F11E6F9E8B0023FF1E /* Main.storyboard */; };
 		282112F51E6F9E8B0023FF1E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 282112F41E6F9E8B0023FF1E /* Assets.xcassets */; };
 		282112F81E6F9E8B0023FF1E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 282112F61E6F9E8B0023FF1E /* LaunchScreen.storyboard */; };
-		285546A71E7680BB00684451 /* WXCAEAGLLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 285546A61E7680BB00684451 /* WXCAEAGLLayer.m */; };
-		28F58C831E72796B00C8B836 /* WXVideoDecoder.m in Sources */ = {isa = PBXBuildFile; fileRef = 28F58C821E72796B00C8B836 /* WXVideoDecoder.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		282112AA1E71031F0072ED1B /* WXVideoCapture.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXVideoCapture.h; sourceTree = "<group>"; };
-		282112AB1E71031F0072ED1B /* WXVideoCapture.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WXVideoCapture.m; sourceTree = "<group>"; };
-		282112AC1E71031F0072ED1B /* WXVideoEncoder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXVideoEncoder.h; sourceTree = "<group>"; };
-		282112AD1E71031F0072ED1B /* WXVideoEncoder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WXVideoEncoder.m; sourceTree = "<group>"; };
+		2803455A1E7908C7006E8163 /* WXCAEAGLLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXCAEAGLLayer.h; sourceTree = "<group>"; };
+		2803455B1E7908C7006E8163 /* WXCAEAGLLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WXCAEAGLLayer.m; sourceTree = "<group>"; };
+		2803455D1E7908C7006E8163 /* WXVideoCapture.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXVideoCapture.h; sourceTree = "<group>"; };
+		2803455E1E7908C7006E8163 /* WXVideoCapture.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WXVideoCapture.m; sourceTree = "<group>"; };
+		2803455F1E7908C7006E8163 /* WXVideoEncoder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXVideoEncoder.h; sourceTree = "<group>"; };
+		280345601E7908C7006E8163 /* WXVideoEncoder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WXVideoEncoder.m; sourceTree = "<group>"; };
+		280345621E7908C7006E8163 /* WXVideoDecoder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXVideoDecoder.h; sourceTree = "<group>"; };
+		280345631E7908C7006E8163 /* WXVideoDecoder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WXVideoDecoder.m; sourceTree = "<group>"; };
 		282112E51E6F9E8B0023FF1E /* WXH264Demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WXH264Demo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		282112E91E6F9E8B0023FF1E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		282112EB1E6F9E8B0023FF1E /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -35,10 +39,6 @@
 		282112F71E6F9E8B0023FF1E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		282112F91E6F9E8B0023FF1E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		282113051E70150D0023FF1E /* PrefixHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.h; sourceTree = "<group>"; };
-		285546A51E7680BB00684451 /* WXCAEAGLLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXCAEAGLLayer.h; sourceTree = "<group>"; };
-		285546A61E7680BB00684451 /* WXCAEAGLLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WXCAEAGLLayer.m; sourceTree = "<group>"; };
-		28F58C811E72796B00C8B836 /* WXVideoDecoder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXVideoDecoder.h; sourceTree = "<group>"; };
-		28F58C821E72796B00C8B836 /* WXVideoDecoder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WXVideoDecoder.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,22 +52,41 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		282112A91E71031F0072ED1B /* VideoCaptureAndEncoder */ = {
+		280345581E7908C7006E8163 /* Video */ = {
 			isa = PBXGroup;
 			children = (
-				282112AA1E71031F0072ED1B /* WXVideoCapture.h */,
-				282112AB1E71031F0072ED1B /* WXVideoCapture.m */,
-				282112AC1E71031F0072ED1B /* WXVideoEncoder.h */,
-				282112AD1E71031F0072ED1B /* WXVideoEncoder.m */,
+				280345591E7908C7006E8163 /* CaeaglLayer */,
+				2803455C1E7908C7006E8163 /* VideoCaptureAndEncoder */,
+				280345611E7908C7006E8163 /* VideoDecoder */,
+			);
+			path = Video;
+			sourceTree = "<group>";
+		};
+		280345591E7908C7006E8163 /* CaeaglLayer */ = {
+			isa = PBXGroup;
+			children = (
+				2803455A1E7908C7006E8163 /* WXCAEAGLLayer.h */,
+				2803455B1E7908C7006E8163 /* WXCAEAGLLayer.m */,
+			);
+			path = CaeaglLayer;
+			sourceTree = "<group>";
+		};
+		2803455C1E7908C7006E8163 /* VideoCaptureAndEncoder */ = {
+			isa = PBXGroup;
+			children = (
+				2803455D1E7908C7006E8163 /* WXVideoCapture.h */,
+				2803455E1E7908C7006E8163 /* WXVideoCapture.m */,
+				2803455F1E7908C7006E8163 /* WXVideoEncoder.h */,
+				280345601E7908C7006E8163 /* WXVideoEncoder.m */,
 			);
 			path = VideoCaptureAndEncoder;
 			sourceTree = "<group>";
 		};
-		282112B01E7124B40072ED1B /* VideoDecoder */ = {
+		280345611E7908C7006E8163 /* VideoDecoder */ = {
 			isa = PBXGroup;
 			children = (
-				28F58C811E72796B00C8B836 /* WXVideoDecoder.h */,
-				28F58C821E72796B00C8B836 /* WXVideoDecoder.m */,
+				280345621E7908C7006E8163 /* WXVideoDecoder.h */,
+				280345631E7908C7006E8163 /* WXVideoDecoder.m */,
 			);
 			path = VideoDecoder;
 			sourceTree = "<group>";
@@ -95,9 +114,7 @@
 				282112EC1E6F9E8B0023FF1E /* AppDelegate.m */,
 				282112EE1E6F9E8B0023FF1E /* ViewController.h */,
 				282112EF1E6F9E8B0023FF1E /* ViewController.m */,
-				285546A41E7680BB00684451 /* CaeaglLayer */,
-				282112B01E7124B40072ED1B /* VideoDecoder */,
-				282112A91E71031F0072ED1B /* VideoCaptureAndEncoder */,
+				280345581E7908C7006E8163 /* Video */,
 				282112F11E6F9E8B0023FF1E /* Main.storyboard */,
 				282112F41E6F9E8B0023FF1E /* Assets.xcassets */,
 				282112F61E6F9E8B0023FF1E /* LaunchScreen.storyboard */,
@@ -114,15 +131,6 @@
 				282113051E70150D0023FF1E /* PrefixHeader.h */,
 			);
 			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		285546A41E7680BB00684451 /* CaeaglLayer */ = {
-			isa = PBXGroup;
-			children = (
-				285546A51E7680BB00684451 /* WXCAEAGLLayer.h */,
-				285546A61E7680BB00684451 /* WXCAEAGLLayer.m */,
-			);
-			path = CaeaglLayer;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -197,13 +205,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				282112AF1E71031F0072ED1B /* WXVideoEncoder.m in Sources */,
-				28F58C831E72796B00C8B836 /* WXVideoDecoder.m in Sources */,
-				285546A71E7680BB00684451 /* WXCAEAGLLayer.m in Sources */,
 				282112F01E6F9E8B0023FF1E /* ViewController.m in Sources */,
-				282112AE1E71031F0072ED1B /* WXVideoCapture.m in Sources */,
+				280345691E7908C7006E8163 /* WXVideoDecoder.m in Sources */,
+				280345681E7908C7006E8163 /* WXVideoEncoder.m in Sources */,
 				282112ED1E6F9E8B0023FF1E /* AppDelegate.m in Sources */,
 				282112EA1E6F9E8B0023FF1E /* main.m in Sources */,
+				280345661E7908C7006E8163 /* WXCAEAGLLayer.m in Sources */,
+				280345671E7908C7006E8163 /* WXVideoCapture.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -328,6 +336,7 @@
 				GCC_PREFIX_HEADER = "$(PROJECT_DIR)/WXH264Demo/PrefixHeader.h";
 				INFOPLIST_FILE = WXH264Demo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_LDFLAGS = "";
 				PRODUCT_BUNDLE_IDENTIFIER = xun.WXH264Demo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "365eb825-9d52-4726-a47a-fc63a145e4a4";
@@ -344,6 +353,7 @@
 				GCC_PREFIX_HEADER = "$(PROJECT_DIR)/WXH264Demo/PrefixHeader.h";
 				INFOPLIST_FILE = WXH264Demo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_LDFLAGS = "";
 				PRODUCT_BUNDLE_IDENTIFIER = xun.WXH264Demo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "365eb825-9d52-4726-a47a-fc63a145e4a4";
