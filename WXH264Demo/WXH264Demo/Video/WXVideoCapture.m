@@ -98,6 +98,7 @@
 - (WXResult) setPreview: (UIView *)preview
                   frame: (CGRect)frame{
     AVCaptureVideoPreviewLayer *previedLayer = [AVCaptureVideoPreviewLayer layerWithSession:wx_captureSession];
+    wx_previewLayer = previedLayer;
     previedLayer.frame = frame;
     [preview.layer insertSublayer:previedLayer atIndex:0];
     return WXResultNoErr;
@@ -139,7 +140,21 @@
 }
 
 - (WXResult)destroy {
+
+    if (wx_captureSession) {
+        [wx_captureSession stopRunning];
+        wx_captureSession = nil;
+    }
+    if (wx_deviceInput) {
+        wx_deviceInput = nil;
+    }
+    if (wx_videoOutput) {
+        wx_videoOutput = nil;
+    }
     
+    [wx_previewLayer removeFromSuperlayer];
+    wx_previewLayer = nil;
+
     return WXResultNoErr;
 }
 

@@ -7,10 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		280345661E7908C7006E8163 /* WXCAEAGLLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 2803455B1E7908C7006E8163 /* WXCAEAGLLayer.m */; };
-		280345671E7908C7006E8163 /* WXVideoCapture.m in Sources */ = {isa = PBXBuildFile; fileRef = 2803455E1E7908C7006E8163 /* WXVideoCapture.m */; };
-		280345681E7908C7006E8163 /* WXVideoEncoder.m in Sources */ = {isa = PBXBuildFile; fileRef = 280345601E7908C7006E8163 /* WXVideoEncoder.m */; };
-		280345691E7908C7006E8163 /* WXVideoDecoder.m in Sources */ = {isa = PBXBuildFile; fileRef = 280345631E7908C7006E8163 /* WXVideoDecoder.m */; };
+		280345761E790F83006E8163 /* WXCAEAGLLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 2803456F1E790F83006E8163 /* WXCAEAGLLayer.m */; };
+		280345771E790F83006E8163 /* WXVideoCapture.m in Sources */ = {isa = PBXBuildFile; fileRef = 280345711E790F83006E8163 /* WXVideoCapture.m */; };
+		280345781E790F83006E8163 /* WXVideoDecoder.m in Sources */ = {isa = PBXBuildFile; fileRef = 280345731E790F83006E8163 /* WXVideoDecoder.m */; };
+		280345791E790F83006E8163 /* WXVideoEncoder.m in Sources */ = {isa = PBXBuildFile; fileRef = 280345751E790F83006E8163 /* WXVideoEncoder.m */; };
+		2803457D1E7911B7006E8163 /* WXAACEncoder.m in Sources */ = {isa = PBXBuildFile; fileRef = 2803457C1E7911B7006E8163 /* WXAACEncoder.m */; };
+		280345801E791BCF006E8163 /* WXAudioCapture.m in Sources */ = {isa = PBXBuildFile; fileRef = 2803457F1E791BCF006E8163 /* WXAudioCapture.m */; };
 		282112EA1E6F9E8B0023FF1E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 282112E91E6F9E8B0023FF1E /* main.m */; };
 		282112ED1E6F9E8B0023FF1E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 282112EC1E6F9E8B0023FF1E /* AppDelegate.m */; };
 		282112F01E6F9E8B0023FF1E /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 282112EF1E6F9E8B0023FF1E /* ViewController.m */; };
@@ -20,14 +22,18 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		2803455A1E7908C7006E8163 /* WXCAEAGLLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXCAEAGLLayer.h; sourceTree = "<group>"; };
-		2803455B1E7908C7006E8163 /* WXCAEAGLLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WXCAEAGLLayer.m; sourceTree = "<group>"; };
-		2803455D1E7908C7006E8163 /* WXVideoCapture.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXVideoCapture.h; sourceTree = "<group>"; };
-		2803455E1E7908C7006E8163 /* WXVideoCapture.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WXVideoCapture.m; sourceTree = "<group>"; };
-		2803455F1E7908C7006E8163 /* WXVideoEncoder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXVideoEncoder.h; sourceTree = "<group>"; };
-		280345601E7908C7006E8163 /* WXVideoEncoder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WXVideoEncoder.m; sourceTree = "<group>"; };
-		280345621E7908C7006E8163 /* WXVideoDecoder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXVideoDecoder.h; sourceTree = "<group>"; };
-		280345631E7908C7006E8163 /* WXVideoDecoder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WXVideoDecoder.m; sourceTree = "<group>"; };
+		2803456E1E790F83006E8163 /* WXCAEAGLLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXCAEAGLLayer.h; sourceTree = "<group>"; };
+		2803456F1E790F83006E8163 /* WXCAEAGLLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WXCAEAGLLayer.m; sourceTree = "<group>"; };
+		280345701E790F83006E8163 /* WXVideoCapture.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXVideoCapture.h; sourceTree = "<group>"; };
+		280345711E790F83006E8163 /* WXVideoCapture.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WXVideoCapture.m; sourceTree = "<group>"; };
+		280345721E790F83006E8163 /* WXVideoDecoder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXVideoDecoder.h; sourceTree = "<group>"; };
+		280345731E790F83006E8163 /* WXVideoDecoder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WXVideoDecoder.m; sourceTree = "<group>"; };
+		280345741E790F83006E8163 /* WXVideoEncoder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXVideoEncoder.h; sourceTree = "<group>"; };
+		280345751E790F83006E8163 /* WXVideoEncoder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WXVideoEncoder.m; sourceTree = "<group>"; };
+		2803457B1E7911B7006E8163 /* WXAACEncoder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXAACEncoder.h; sourceTree = "<group>"; };
+		2803457C1E7911B7006E8163 /* WXAACEncoder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WXAACEncoder.m; sourceTree = "<group>"; };
+		2803457E1E791BCF006E8163 /* WXAudioCapture.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXAudioCapture.h; sourceTree = "<group>"; };
+		2803457F1E791BCF006E8163 /* WXAudioCapture.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WXAudioCapture.m; sourceTree = "<group>"; };
 		282112E51E6F9E8B0023FF1E /* WXH264Demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WXH264Demo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		282112E91E6F9E8B0023FF1E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		282112EB1E6F9E8B0023FF1E /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -52,43 +58,30 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		280345581E7908C7006E8163 /* Video */ = {
+		2803456D1E790F83006E8163 /* Video */ = {
 			isa = PBXGroup;
 			children = (
-				280345591E7908C7006E8163 /* CaeaglLayer */,
-				2803455C1E7908C7006E8163 /* VideoCaptureAndEncoder */,
-				280345611E7908C7006E8163 /* VideoDecoder */,
+				2803456E1E790F83006E8163 /* WXCAEAGLLayer.h */,
+				2803456F1E790F83006E8163 /* WXCAEAGLLayer.m */,
+				280345701E790F83006E8163 /* WXVideoCapture.h */,
+				280345711E790F83006E8163 /* WXVideoCapture.m */,
+				280345741E790F83006E8163 /* WXVideoEncoder.h */,
+				280345751E790F83006E8163 /* WXVideoEncoder.m */,
+				280345721E790F83006E8163 /* WXVideoDecoder.h */,
+				280345731E790F83006E8163 /* WXVideoDecoder.m */,
 			);
 			path = Video;
 			sourceTree = "<group>";
 		};
-		280345591E7908C7006E8163 /* CaeaglLayer */ = {
+		2803457A1E790FA5006E8163 /* Audio */ = {
 			isa = PBXGroup;
 			children = (
-				2803455A1E7908C7006E8163 /* WXCAEAGLLayer.h */,
-				2803455B1E7908C7006E8163 /* WXCAEAGLLayer.m */,
+				2803457B1E7911B7006E8163 /* WXAACEncoder.h */,
+				2803457C1E7911B7006E8163 /* WXAACEncoder.m */,
+				2803457E1E791BCF006E8163 /* WXAudioCapture.h */,
+				2803457F1E791BCF006E8163 /* WXAudioCapture.m */,
 			);
-			path = CaeaglLayer;
-			sourceTree = "<group>";
-		};
-		2803455C1E7908C7006E8163 /* VideoCaptureAndEncoder */ = {
-			isa = PBXGroup;
-			children = (
-				2803455D1E7908C7006E8163 /* WXVideoCapture.h */,
-				2803455E1E7908C7006E8163 /* WXVideoCapture.m */,
-				2803455F1E7908C7006E8163 /* WXVideoEncoder.h */,
-				280345601E7908C7006E8163 /* WXVideoEncoder.m */,
-			);
-			path = VideoCaptureAndEncoder;
-			sourceTree = "<group>";
-		};
-		280345611E7908C7006E8163 /* VideoDecoder */ = {
-			isa = PBXGroup;
-			children = (
-				280345621E7908C7006E8163 /* WXVideoDecoder.h */,
-				280345631E7908C7006E8163 /* WXVideoDecoder.m */,
-			);
-			path = VideoDecoder;
+			path = Audio;
 			sourceTree = "<group>";
 		};
 		282112DC1E6F9E8B0023FF1E = {
@@ -114,7 +107,8 @@
 				282112EC1E6F9E8B0023FF1E /* AppDelegate.m */,
 				282112EE1E6F9E8B0023FF1E /* ViewController.h */,
 				282112EF1E6F9E8B0023FF1E /* ViewController.m */,
-				280345581E7908C7006E8163 /* Video */,
+				2803457A1E790FA5006E8163 /* Audio */,
+				2803456D1E790F83006E8163 /* Video */,
 				282112F11E6F9E8B0023FF1E /* Main.storyboard */,
 				282112F41E6F9E8B0023FF1E /* Assets.xcassets */,
 				282112F61E6F9E8B0023FF1E /* LaunchScreen.storyboard */,
@@ -206,12 +200,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				282112F01E6F9E8B0023FF1E /* ViewController.m in Sources */,
-				280345691E7908C7006E8163 /* WXVideoDecoder.m in Sources */,
-				280345681E7908C7006E8163 /* WXVideoEncoder.m in Sources */,
+				280345801E791BCF006E8163 /* WXAudioCapture.m in Sources */,
 				282112ED1E6F9E8B0023FF1E /* AppDelegate.m in Sources */,
 				282112EA1E6F9E8B0023FF1E /* main.m in Sources */,
-				280345661E7908C7006E8163 /* WXCAEAGLLayer.m in Sources */,
-				280345671E7908C7006E8163 /* WXVideoCapture.m in Sources */,
+				280345791E790F83006E8163 /* WXVideoEncoder.m in Sources */,
+				280345781E790F83006E8163 /* WXVideoDecoder.m in Sources */,
+				2803457D1E7911B7006E8163 /* WXAACEncoder.m in Sources */,
+				280345761E790F83006E8163 /* WXCAEAGLLayer.m in Sources */,
+				280345771E790F83006E8163 /* WXVideoCapture.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

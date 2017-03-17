@@ -11,13 +11,17 @@
 #import "WXVideoEncoder.h"
 #import "WXVideoDecoder.h"
 #import "WXCAEAGLLayer.h"
+#import "WXAudioCapture.h"
+#import "WXAACEncoder.h"
 
-@interface ViewController () <WXVideoCaptureDelegate,WXVideoEncoderDelegate>
+@interface ViewController () <WXVideoCaptureDelegate,WXVideoEncoderDelegate,WXAudioCaptureDelegate>
 {
-    WXVideoCapture              *wx_videoCapture;
-    WXVideoEncoder              *wx_videoEncoder;
-    WXVideoDecoder              *wx_videoDecoder;
-    WXCAEAGLLayer               *wx_caeaglLayer;
+    WXVideoCapture              *   wx_videoCapture;
+    WXVideoEncoder              *   wx_videoEncoder;
+    WXVideoDecoder              *   wx_videoDecoder;
+    WXCAEAGLLayer               *   wx_caeaglLayer;
+    WXAudioCapture              *   wx_audioCapture;
+    WXAACEncoder                *   wx_aacEncoder;
 }
 @end
 
@@ -27,11 +31,13 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     
+    // 视频
     wx_videoCapture = [[WXVideoCapture alloc] init];
     wx_videoCapture.delegate = self;
     [wx_videoCapture create];
+    NSLog(@">>>>>> %f",self.view.frame.size.width);
     
-    [wx_videoCapture setPreview:self.view frame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height/2)];
+    [wx_videoCapture setPreview:self.view frame:CGRectMake(0, 0, self.view.frame.size.height/2*0.75, self.view.frame.size.height/2)];
     wx_videoEncoder = [[WXVideoEncoder alloc] init];
     wx_videoEncoder.delegate = self;
     [wx_videoEncoder createWithWidth:480 height:640 frameInterval:30];
@@ -41,7 +47,15 @@
     wx_caeaglLayer = [[WXCAEAGLLayer alloc] initWithFrame:CGRectMake(0, self.view.frame.size.height/2, self.view.frame.size.width, self.view.frame.size.height/2)];
     [self.view.layer insertSublayer:wx_caeaglLayer atIndex:0];
     
+    // 音频
+    wx_audioCapture = [[WXAudioCapture alloc] init];
+    [wx_audioCapture create];
+    wx_audioCapture.delegate = self;
+    [wx_audioCapture openMicrophoneWithDevice];
+    
+    wx_aacEncoder = [[WXAACEncoder alloc] init];
 }
+
 
 - (IBAction)openCamera:(UIButton *)sender {
     [wx_videoCapture openCameraWithDevicePosition:AVCaptureDevicePositionFront resolution:WXCaptureCameraQuality640x480];
@@ -70,18 +84,29 @@
     });
 }
 - (IBAction)destroyButton:(UIButton *)sender {
-    [wx_videoDecoder destroy];
+    [wx_videoCapture destroy];
+//    [wx_videoDecoder destroy];
 }
 
--(void)wxVideoCaptureOutputSampleBuffer:(const CMSampleBufferRef)sampleBuffer fromVideoCapture:(const WXVideoCapture *)videoCapture {
+-(void)wxVideoCaptureOutputSampleBuffer:(const CMSampleBufferRef)sampleBuffer
+                       fromVideoCapture:(const WXVideoCapture *)videoCapture {
+    
     [wx_videoEncoder encode:CMSampleBufferGetImageBuffer(sampleBuffer)];
 }
 
--(void)wxVideoEncoderOutputNALUnit:(NALUnit)dataUnit fromVideoEncoder:(const WXVideoEncoder *)videoEncoder {
+-(void)wxVideoEncoderOutputNALUnit:(NALUnit)dataUnit
+                  fromVideoEncoder:(const WXVideoEncoder *)videoEncoder {
     
-    //    [wx_videoDecoder wx_decodeWithData:dataUnit];
-    //    NSLog(@">>>> pixelBuffer = %@", pixelBuffer);
-    //    NSLog(@">>>> dataUnit type %d ,  %02x",dataUnit.type,dataUnit.data[0]);
+        NSLog(@">>>> dataUnit type %d ,  %02x",dataUnit.type,dataUnit.data[0]);
+}
+
+- (void) wxAudioCaptureOutputSampleBuffer: (const CMSampleBufferRef)sampleBuffer
+                         fromAudioCapture: (const WXAudioCapture *)audioCapture {
+    
+    [wx_aacEncoder encodeSampleBuffer:sampleBuffer completionBlock:^(NSData *encodedData, NSError *error) {
+        NSLog(@">>>> auido encode data = %@",encodedData);
+    }];
+
 }
 
 
