@@ -58,7 +58,7 @@
 
 
 - (IBAction)openCamera:(UIButton *)sender {
-    [wx_videoCapture openCameraWithDevicePosition:AVCaptureDevicePositionFront resolution:WXCaptureCameraQuality640x480];
+    [wx_videoCapture openCameraWithDevicePosition:AVCaptureDevicePositionBack resolution:WXCaptureCameraQuality640x480];
 }
 
 - (IBAction)switchCamera:(UIButton *)sender {
@@ -104,7 +104,7 @@
                          fromAudioCapture: (const WXAudioCapture *)audioCapture {
     
     [wx_aacEncoder encodeSampleBuffer:sampleBuffer completionBlock:^(NSData *encodedData, NSError *error) {
-        NSLog(@">>>> auido encode data = %@",encodedData);
+//        NSLog(@">>>> auido encode data = %@",encodedData);
     }];
 
 }

@@ -49,7 +49,9 @@
     }
     //3、设置输出视频方向
     AVCaptureConnection * connection = [videoOutput connectionWithMediaType:AVMediaTypeVideo];
-    [connection setVideoOrientation:AVCaptureVideoOrientationPortrait];
+    if ([connection isVideoOrientationSupported]) {
+        [connection setVideoOrientation:AVCaptureVideoOrientationPortrait];
+    }
     
     return WXResultNoErr;
 }
@@ -136,6 +138,13 @@
     
     // 记录当前摄像头输入设备
     wx_deviceInput = videoDeviceInput;
+    
+    //重置采集方向
+    AVCaptureConnection * connection = [wx_videoOutput connectionWithMediaType:AVMediaTypeVideo];
+    if ([connection isVideoOrientationSupported]) {
+        [connection setVideoOrientation:AVCaptureVideoOrientationPortrait];
+    }
+
     return WXResultNoErr;
 }
 

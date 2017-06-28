@@ -72,7 +72,7 @@
 - (void)captureOutput:(AVCaptureOutput *)captureOutput didOutputSampleBuffer:(CMSampleBufferRef)sampleBuffer fromConnection:(AVCaptureConnection *)connection
 {
     [self.delegate wxAudioCaptureOutputSampleBuffer:sampleBuffer fromAudioCapture:self];
-    NSLog(@">>>>>------%@",sampleBuffer);
+//    NSLog(@">>>>>------%@",sampleBuffer);
 }
 
 
