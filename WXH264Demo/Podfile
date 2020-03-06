@@ -1,0 +1,16 @@
+source 'https://github.com/CocoaPods/Specs.git'
+
+workspace 'IAskDoctorNew.xcworkspace' #workspace文件名
+
+platform :ios, '9.0'
+
+inhibit_all_warnings! #消除第三方的警告，可能产生意想不到的错误
+use_frameworks! #动态库
+
+target 'WXH264Demo' do
+    pod 'LFLiveKit'
+
+end
+
+
+

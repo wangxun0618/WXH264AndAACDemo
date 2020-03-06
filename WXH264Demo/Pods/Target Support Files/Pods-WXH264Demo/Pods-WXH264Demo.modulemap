@@ -1,0 +1,6 @@
+framework module Pods_WXH264Demo {
+  umbrella header "Pods-WXH264Demo-umbrella.h"
+
+  export *
+  module * { export * }
+}

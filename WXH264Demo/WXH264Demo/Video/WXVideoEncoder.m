@@ -37,7 +37,16 @@
          @param void <#void description#>
          @return <#return value description#>
          */
-        OSStatus status = VTCompressionSessionCreate(NULL, width, height, kCMVideoCodecType_H264, NULL, NULL, NULL, didCompressH264, (__bridge void * _Nullable)(self),&WEncodingSession);
+        OSStatus status = VTCompressionSessionCreate(NULL,
+                                                     width,
+                                                     height,
+                                                     kCMVideoCodecType_H264,
+                                                     NULL,
+                                                     NULL,
+                                                     NULL,
+                                                     didCompressH264,
+                                                     (__bridge void * _Nullable)(self),
+                                                     &WEncodingSession);
         
         if (status != 0) {
             NSLog(@"H264: Unable to create a H264 session");

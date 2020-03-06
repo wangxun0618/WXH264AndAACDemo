@@ -19,6 +19,10 @@
 		282112F31E6F9E8B0023FF1E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 282112F11E6F9E8B0023FF1E /* Main.storyboard */; };
 		282112F51E6F9E8B0023FF1E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 282112F41E6F9E8B0023FF1E /* Assets.xcassets */; };
 		282112F81E6F9E8B0023FF1E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 282112F61E6F9E8B0023FF1E /* LaunchScreen.storyboard */; };
+		31503A7C2410D4450029E506 /* UIView+PixelBuffer.m in Sources */ = {isa = PBXBuildFile; fileRef = 31503A7B2410D4450029E506 /* UIView+PixelBuffer.m */; };
+		31503A7F2410D9890029E506 /* UIColor+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 31503A7E2410D9890029E506 /* UIColor+Extension.m */; };
+		31503A852410EA3A0029E506 /* PushMetalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 31503A842410EA3A0029E506 /* PushMetalViewController.m */; };
+		994C6D99FB592C83D5611783 /* Pods_WXH264Demo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A16CDFB912DC6B07E61FFA03 /* Pods_WXH264Demo.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -45,6 +49,15 @@
 		282112F71E6F9E8B0023FF1E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		282112F91E6F9E8B0023FF1E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		282113051E70150D0023FF1E /* PrefixHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.h; sourceTree = "<group>"; };
+		31503A7A2410D4450029E506 /* UIView+PixelBuffer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIView+PixelBuffer.h"; sourceTree = "<group>"; };
+		31503A7B2410D4450029E506 /* UIView+PixelBuffer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIView+PixelBuffer.m"; sourceTree = "<group>"; };
+		31503A7D2410D9890029E506 /* UIColor+Extension.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIColor+Extension.h"; sourceTree = "<group>"; };
+		31503A7E2410D9890029E506 /* UIColor+Extension.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Extension.m"; sourceTree = "<group>"; };
+		31503A832410EA3A0029E506 /* PushMetalViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PushMetalViewController.h; sourceTree = "<group>"; };
+		31503A842410EA3A0029E506 /* PushMetalViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PushMetalViewController.m; sourceTree = "<group>"; };
+		3C8C5AF263331B98AC2FCD2F /* Pods-WXH264Demo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WXH264Demo.debug.xcconfig"; path = "Target Support Files/Pods-WXH264Demo/Pods-WXH264Demo.debug.xcconfig"; sourceTree = "<group>"; };
+		A16CDFB912DC6B07E61FFA03 /* Pods_WXH264Demo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WXH264Demo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E5EBCA47D36E1E7B80086B28 /* Pods-WXH264Demo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WXH264Demo.release.xcconfig"; path = "Target Support Files/Pods-WXH264Demo/Pods-WXH264Demo.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,12 +65,22 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				994C6D99FB592C83D5611783 /* Pods_WXH264Demo.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1B06A8B72C43351D3D4A0C73 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				3C8C5AF263331B98AC2FCD2F /* Pods-WXH264Demo.debug.xcconfig */,
+				E5EBCA47D36E1E7B80086B28 /* Pods-WXH264Demo.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		2803456D1E790F83006E8163 /* Video */ = {
 			isa = PBXGroup;
 			children = (
@@ -89,6 +112,8 @@
 			children = (
 				282112E71E6F9E8B0023FF1E /* WXH264Demo */,
 				282112E61E6F9E8B0023FF1E /* Products */,
+				1B06A8B72C43351D3D4A0C73 /* Pods */,
+				AA258490A70462704A896805 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -107,6 +132,8 @@
 				282112EC1E6F9E8B0023FF1E /* AppDelegate.m */,
 				282112EE1E6F9E8B0023FF1E /* ViewController.h */,
 				282112EF1E6F9E8B0023FF1E /* ViewController.m */,
+				31503A862410F7390029E506 /* CollectTheView */,
+				31503A762410D3460029E506 /* UIView */,
 				2803457A1E790FA5006E8163 /* Audio */,
 				2803456D1E790F83006E8163 /* Video */,
 				282112F11E6F9E8B0023FF1E /* Main.storyboard */,
@@ -127,6 +154,34 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		31503A762410D3460029E506 /* UIView */ = {
+			isa = PBXGroup;
+			children = (
+				31503A7A2410D4450029E506 /* UIView+PixelBuffer.h */,
+				31503A7B2410D4450029E506 /* UIView+PixelBuffer.m */,
+				31503A7D2410D9890029E506 /* UIColor+Extension.h */,
+				31503A7E2410D9890029E506 /* UIColor+Extension.m */,
+			);
+			path = UIView;
+			sourceTree = "<group>";
+		};
+		31503A862410F7390029E506 /* CollectTheView */ = {
+			isa = PBXGroup;
+			children = (
+				31503A832410EA3A0029E506 /* PushMetalViewController.h */,
+				31503A842410EA3A0029E506 /* PushMetalViewController.m */,
+			);
+			path = CollectTheView;
+			sourceTree = "<group>";
+		};
+		AA258490A70462704A896805 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A16CDFB912DC6B07E61FFA03 /* Pods_WXH264Demo.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -134,9 +189,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 282112FC1E6F9E8B0023FF1E /* Build configuration list for PBXNativeTarget "WXH264Demo" */;
 			buildPhases = (
+				A89D6C583B88754B1460B18C /* [CP] Check Pods Manifest.lock */,
 				282112E11E6F9E8B0023FF1E /* Sources */,
 				282112E21E6F9E8B0023FF1E /* Frameworks */,
 				282112E31E6F9E8B0023FF1E /* Resources */,
+				34AAC5C9BA61CAB7D201D3E6 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -158,8 +215,8 @@
 				TargetAttributes = {
 					282112E41E6F9E8B0023FF1E = {
 						CreatedOnToolsVersion = 8.2.1;
-						DevelopmentTeam = 7MX2VQ922N;
-						ProvisioningStyle = Manual;
+						DevelopmentTeam = 3WCZP48BJA;
+						ProvisioningStyle = Automatic;
 					};
 				};
 			};
@@ -168,6 +225,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);
@@ -194,6 +252,49 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		34AAC5C9BA61CAB7D201D3E6 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-WXH264Demo/Pods-WXH264Demo-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/LFLiveKit/LFLiveKit.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/LFLiveKit.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-WXH264Demo/Pods-WXH264Demo-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A89D6C583B88754B1460B18C /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-WXH264Demo-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		282112E11E6F9E8B0023FF1E /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -203,10 +304,13 @@
 				280345801E791BCF006E8163 /* WXAudioCapture.m in Sources */,
 				282112ED1E6F9E8B0023FF1E /* AppDelegate.m in Sources */,
 				282112EA1E6F9E8B0023FF1E /* main.m in Sources */,
+				31503A7F2410D9890029E506 /* UIColor+Extension.m in Sources */,
 				280345791E790F83006E8163 /* WXVideoEncoder.m in Sources */,
 				280345781E790F83006E8163 /* WXVideoDecoder.m in Sources */,
 				2803457D1E7911B7006E8163 /* WXAACEncoder.m in Sources */,
 				280345761E790F83006E8163 /* WXCAEAGLLayer.m in Sources */,
+				31503A7C2410D4450029E506 /* UIView+PixelBuffer.m in Sources */,
+				31503A852410EA3A0029E506 /* PushMetalViewController.m in Sources */,
 				280345771E790F83006E8163 /* WXVideoCapture.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -325,35 +429,39 @@
 		};
 		282112FD1E6F9E8B0023FF1E /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3C8C5AF263331B98AC2FCD2F /* Pods-WXH264Demo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 7MX2VQ922N;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 3WCZP48BJA;
 				ENABLE_BITCODE = NO;
 				GCC_PREFIX_HEADER = "$(PROJECT_DIR)/WXH264Demo/PrefixHeader.h";
 				INFOPLIST_FILE = WXH264Demo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = "";
-				PRODUCT_BUNDLE_IDENTIFIER = xun.WXH264Demo;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "365eb825-9d52-4726-a47a-fc63a145e4a4";
-				PROVISIONING_PROFILE_SPECIFIER = ACPublic2017Profile;
+				PRODUCT_BUNDLE_IDENTIFIER = com.xun.WXH264;
+				PRODUCT_NAME = WXH264Demo;
+				PROVISIONING_PROFILE_SPECIFIER = "";
 			};
 			name = Debug;
 		};
 		282112FE1E6F9E8B0023FF1E /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E5EBCA47D36E1E7B80086B28 /* Pods-WXH264Demo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 7MX2VQ922N;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 3WCZP48BJA;
 				ENABLE_BITCODE = NO;
 				GCC_PREFIX_HEADER = "$(PROJECT_DIR)/WXH264Demo/PrefixHeader.h";
 				INFOPLIST_FILE = WXH264Demo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = "";
-				PRODUCT_BUNDLE_IDENTIFIER = xun.WXH264Demo;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "365eb825-9d52-4726-a47a-fc63a145e4a4";
-				PROVISIONING_PROFILE_SPECIFIER = ACPublic2017Profile;
+				PRODUCT_BUNDLE_IDENTIFIER = com.xun.WXH264;
+				PRODUCT_NAME = WXH264Demo;
+				PROVISIONING_PROFILE_SPECIFIER = "";
 			};
 			name = Release;
 		};
