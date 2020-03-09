@@ -9,6 +9,7 @@ use_frameworks! #动态库
 
 target 'WXH264Demo' do
     pod 'LFLiveKit'
+    pod 'NMCLiveStreaming_MINI'
 
 end
 

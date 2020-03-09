@@ -8,6 +8,7 @@
 
 
 #import <UIKit/UIKit.h>
+#import <AVFoundation/AVFoundation.h>
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -15,6 +16,9 @@ NS_ASSUME_NONNULL_BEGIN
 - (CVPixelBufferRef)CVPixelBufferRef;
 
 - (UIImage *)imageFromPixelBuffer:(CVPixelBufferRef)pixelBufferRef;
+
++ (void)sampleBufferFromCVPixelBufferRef:(CVPixelBufferRef)pixelBuffer
+                         sampleBufferRef:(CMSampleBufferRef)sampleBuffer;
 
 - (CVPixelBufferRef)pixelBufferFromCGImage:(CGImageRef)image;
 @end

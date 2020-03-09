@@ -9,7 +9,8 @@
 #ifndef PrefixHeader_h
 #define PrefixHeader_h
 
-
+#import "UIView+PixelBuffer.h"
+#import "UIColor+Extension.h"
 
 typedef enum {
     WXResultNoErr                                               = 0,

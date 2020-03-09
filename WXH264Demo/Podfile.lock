@@ -1,16 +1,20 @@
 PODS:
   - LFLiveKit (2.6)
+  - NMCLiveStreaming_MINI (3.3.0)
 
 DEPENDENCIES:
   - LFLiveKit
+  - NMCLiveStreaming_MINI
 
 SPEC REPOS:
   https://github.com/CocoaPods/Specs.git:
     - LFLiveKit
+    - NMCLiveStreaming_MINI
 
 SPEC CHECKSUMS:
   LFLiveKit: 2219563721f8aa0f188effc3395a06e2d53b23f2
+  NMCLiveStreaming_MINI: 20f54bd37aea1db2bdc42add7938fde897e55a4f
 
-PODFILE CHECKSUM: ec3282db2223fe18607be8c344651647cc641f6a
+PODFILE CHECKSUM: 8ce718bd08cb6b5a2edf7dd2c6a7a138ccfb1487
 
 COCOAPODS: 1.9.0.beta.3

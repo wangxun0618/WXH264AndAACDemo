@@ -1,9 +1,9 @@
-FRAMEWORK_SEARCH_PATHS = $(inherited) "${PODS_CONFIGURATION_BUILD_DIR}/LFLiveKit"
+FRAMEWORK_SEARCH_PATHS = $(inherited) "${PODS_CONFIGURATION_BUILD_DIR}/LFLiveKit" "${PODS_ROOT}/NMCLiveStreaming_MINI/MINISDK"
 GCC_PREPROCESSOR_DEFINITIONS = $(inherited) COCOAPODS=1
 HEADER_SEARCH_PATHS = $(inherited) "${PODS_CONFIGURATION_BUILD_DIR}/LFLiveKit/LFLiveKit.framework/Headers"
 LD_RUNPATH_SEARCH_PATHS = $(inherited) '@executable_path/Frameworks' '@loader_path/Frameworks'
-OTHER_CFLAGS = $(inherited) -isystem "${PODS_CONFIGURATION_BUILD_DIR}/LFLiveKit/LFLiveKit.framework/Headers" -iframework "${PODS_CONFIGURATION_BUILD_DIR}/LFLiveKit"
-OTHER_LDFLAGS = $(inherited) -l"c++" -l"z" -framework "AVFoundation" -framework "AudioToolbox" -framework "Foundation" -framework "LFLiveKit" -framework "UIKit" -framework "VideoToolbox"
+OTHER_CFLAGS = $(inherited) -isystem "${PODS_CONFIGURATION_BUILD_DIR}/LFLiveKit/LFLiveKit.framework/Headers" -iframework "${PODS_CONFIGURATION_BUILD_DIR}/LFLiveKit" -iframework "${PODS_ROOT}/NMCLiveStreaming_MINI/MINISDK"
+OTHER_LDFLAGS = $(inherited) -l"c++" -l"z" -framework "AVFoundation" -framework "AudioToolbox" -framework "Foundation" -framework "LFLiveKit" -framework "NMCBasicModuleFramework" -framework "NMCLiveStreaming" -framework "UIKit" -framework "VideoToolbox"
 PODS_BUILD_DIR = ${BUILD_DIR}
 PODS_CONFIGURATION_BUILD_DIR = ${PODS_BUILD_DIR}/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)
 PODS_PODFILE_DIR_PATH = ${SRCROOT}/.

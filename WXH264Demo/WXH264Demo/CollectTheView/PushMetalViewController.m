@@ -10,8 +10,7 @@
 #import "WXAudioCapture.h"
 #import "WXVideoCapture.h"
 #import <LFLiveKit/LFLiveKit.h>
-#import "UIView+PixelBuffer.h"
-#import "UIColor+Extension.h"
+
 
 //推流采集的视频流
 @interface PushMetalViewController () <WXVideoCaptureDelegate,WXAudioCaptureDelegate,LFLiveSessionDelegate>
@@ -58,7 +57,7 @@
     [wx_liveSession setRunning:YES];
 
     LFLiveStreamInfo *stream = [LFLiveStreamInfo new];
-    stream.url = @"rtmp://10.220.220.155:1935/zbcs/room";
+    stream.url = @"rtmp://10.220.220.210:1935/zbcs/room";
     [wx_liveSession startLive:stream];
     wx_liveSession.delegate = self;
     

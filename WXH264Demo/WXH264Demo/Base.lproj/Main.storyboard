@@ -74,10 +74,10 @@
             </objects>
             <point key="canvasLocation" x="-170" y="66"/>
         </scene>
-        <!--Push Metal View Controller-->
+        <!--Live Streaming View Controller-->
         <scene sceneID="I4F-HQ-zt0">
             <objects>
-                <viewController id="EcP-lw-1Jj" customClass="PushMetalViewController" sceneMemberID="viewController">
+                <viewController id="EcP-lw-1Jj" customClass="NMCLiveStreamingViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="uoe-ge-D9X"/>
                         <viewControllerLayoutGuide type="bottom" id="JPC-PF-SXc"/>

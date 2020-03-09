@@ -1,0 +1,6 @@
+framework module NMCLiveStreaming {
+  umbrella header "NMCLiveStreaming.h"
+
+  export *
+  module * { export * }
+}

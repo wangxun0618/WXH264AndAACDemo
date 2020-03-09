@@ -170,7 +170,7 @@
 - (void)captureOutput:(AVCaptureOutput *)captureOutput didOutputSampleBuffer:(CMSampleBufferRef)sampleBuffer fromConnection:(AVCaptureConnection *)connection {
     
     CVPixelBufferRef buffer = CMSampleBufferGetImageBuffer(sampleBuffer);
-    NSLog(@">>>width:%zu height: %zu",CVPixelBufferGetWidth(buffer),CVPixelBufferGetHeight(buffer));
+//    NSLog(@">>>width:%zu height: %zu",CVPixelBufferGetWidth(buffer),CVPixelBufferGetHeight(buffer));
     [self.delegate wxVideoCaptureOutputSampleBuffer:sampleBuffer fromVideoCapture:self];
 }
 

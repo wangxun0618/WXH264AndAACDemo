@@ -192,9 +192,13 @@ fi
 
 if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "${BUILT_PRODUCTS_DIR}/LFLiveKit/LFLiveKit.framework"
+  install_framework "${PODS_ROOT}/NMCLiveStreaming_MINI/MINISDK/NMCBasicModuleFramework.framework"
+  install_framework "${PODS_ROOT}/NMCLiveStreaming_MINI/MINISDK/NMCLiveStreaming.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "${BUILT_PRODUCTS_DIR}/LFLiveKit/LFLiveKit.framework"
+  install_framework "${PODS_ROOT}/NMCLiveStreaming_MINI/MINISDK/NMCBasicModuleFramework.framework"
+  install_framework "${PODS_ROOT}/NMCLiveStreaming_MINI/MINISDK/NMCLiveStreaming.framework"
 fi
 if [ "${COCOAPODS_PARALLEL_CODE_SIGN}" == "true" ]; then
   wait

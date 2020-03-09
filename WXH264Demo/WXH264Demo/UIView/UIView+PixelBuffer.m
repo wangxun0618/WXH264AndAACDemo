@@ -8,7 +8,6 @@
 
 #import "UIView+PixelBuffer.h"
 
-
 @implementation UIView (PixelBuffer)
 
 
@@ -43,14 +42,14 @@
     NSParameterAssert(context);
     
     CGContextConcatCTM(context, CGAffineTransformMakeRotation(0));
-
+    
     CGAffineTransform flipVertical = CGAffineTransformMake( 1, 0, 0, -1, 0, frameHeight);
     CGContextConcatCTM(context, flipVertical);
     
-//    CGAffineTransform flipHorizontal = CGAffineTransformMake( -1.0, 0.0, 0.0, 1.0, frameWidth, 0.0 );
-//    CGContextConcatCTM(context, flipHorizontal);
-
-
+    //    CGAffineTransform flipHorizontal = CGAffineTransformMake( -1.0, 0.0, 0.0, 1.0, frameWidth, 0.0 );
+    //    CGContextConcatCTM(context, flipHorizontal);
+    
+    
     [self.layer renderInContext:context];
     
     CGColorSpaceRelease(rgbColorSpace);
@@ -61,31 +60,32 @@
 }
 
 - (CVPixelBufferRef)pixelBufferFromCGImage:(CGImageRef)image {
-    NSDictionary *options = [NSDictionary dictionaryWithObjectsAndKeys:
-                             [NSNumber numberWithBool:YES], kCVPixelBufferCGImageCompatibilityKey,
-                             [NSNumber numberWithBool:YES], kCVPixelBufferCGBitmapContextCompatibilityKey,
-                             nil];
+    
+    NSDictionary *options = @{(NSString*)kCVPixelBufferCGImageCompatibilityKey : @YES,
+                              (NSString*)kCVPixelBufferCGBitmapContextCompatibilityKey : @YES,
+                              (NSString*)kCVPixelBufferIOSurfacePropertiesKey: [NSDictionary dictionary]};
 
+    
     CVPixelBufferRef pxbuffer = NULL;
-
+    
     CGFloat frameWidth = CGImageGetWidth(image);
     CGFloat frameHeight = CGImageGetHeight(image);
-
+    
     CVReturn status = CVPixelBufferCreate(kCFAllocatorDefault,
                                           frameWidth,
                                           frameHeight,
                                           kCVPixelFormatType_32ARGB,
                                           (__bridge CFDictionaryRef) options,
                                           &pxbuffer);
-
+    
     NSParameterAssert(status == kCVReturnSuccess && pxbuffer != NULL);
-
+    
     CVPixelBufferLockBaseAddress(pxbuffer, 0);
     void *pxdata = CVPixelBufferGetBaseAddress(pxbuffer);
     NSParameterAssert(pxdata != NULL);
-
+    
     CGColorSpaceRef rgbColorSpace = CGColorSpaceCreateDeviceRGB();
-
+    
     CGContextRef context = CGBitmapContextCreate(pxdata,
                                                  frameWidth,
                                                  frameHeight,
@@ -102,9 +102,9 @@
                        image);
     CGColorSpaceRelease(rgbColorSpace);
     CGContextRelease(context);
-
+    
     CVPixelBufferUnlockBaseAddress(pxbuffer, 0);
-
+    
     return pxbuffer;
 }
 
@@ -132,6 +132,19 @@
     return image;
 }
 
++ (void)sampleBufferFromCVPixelBufferRef:(CVPixelBufferRef)pixelBuffer
+                         sampleBufferRef:(CMSampleBufferRef)sampleBuffer {
+    
+    CMVideoFormatDescriptionRef videoInfo = NULL;
+    CMTime frameTime = CMTimeMake((CACurrentMediaTime()*1000), 1000);
+    CMTime duration = CMTimeMake(1, (int32_t)20);
+    CMSampleTimingInfo timimgInfo = {duration, frameTime, kCMTimeInvalid};
+
+    CMVideoFormatDescriptionCreateForImageBuffer(nil, pixelBuffer, &videoInfo);
+    CMSampleBufferCreateForImageBuffer(kCFAllocatorDefault, pixelBuffer, true, NULL, NULL, videoInfo, &timimgInfo, &sampleBuffer);
+    
+    NSLog(@"%@",sampleBuffer);
+}
 
 
 @end

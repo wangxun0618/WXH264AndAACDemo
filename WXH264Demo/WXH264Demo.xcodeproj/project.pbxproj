@@ -19,9 +19,10 @@
 		282112F31E6F9E8B0023FF1E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 282112F11E6F9E8B0023FF1E /* Main.storyboard */; };
 		282112F51E6F9E8B0023FF1E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 282112F41E6F9E8B0023FF1E /* Assets.xcassets */; };
 		282112F81E6F9E8B0023FF1E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 282112F61E6F9E8B0023FF1E /* LaunchScreen.storyboard */; };
+		31112DAD2415DC22009665AE /* NMCLiveStreamingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 31112DAC2415DC22009665AE /* NMCLiveStreamingViewController.m */; };
+		31112DAE2416108E009665AE /* PushMetalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 31503A842410EA3A0029E506 /* PushMetalViewController.m */; };
 		31503A7C2410D4450029E506 /* UIView+PixelBuffer.m in Sources */ = {isa = PBXBuildFile; fileRef = 31503A7B2410D4450029E506 /* UIView+PixelBuffer.m */; };
 		31503A7F2410D9890029E506 /* UIColor+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 31503A7E2410D9890029E506 /* UIColor+Extension.m */; };
-		31503A852410EA3A0029E506 /* PushMetalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 31503A842410EA3A0029E506 /* PushMetalViewController.m */; };
 		994C6D99FB592C83D5611783 /* Pods_WXH264Demo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A16CDFB912DC6B07E61FFA03 /* Pods_WXH264Demo.framework */; };
 /* End PBXBuildFile section */
 
@@ -49,6 +50,8 @@
 		282112F71E6F9E8B0023FF1E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		282112F91E6F9E8B0023FF1E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		282113051E70150D0023FF1E /* PrefixHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.h; sourceTree = "<group>"; };
+		31112DAB2415DC22009665AE /* NMCLiveStreamingViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NMCLiveStreamingViewController.h; sourceTree = "<group>"; };
+		31112DAC2415DC22009665AE /* NMCLiveStreamingViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NMCLiveStreamingViewController.m; sourceTree = "<group>"; };
 		31503A7A2410D4450029E506 /* UIView+PixelBuffer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIView+PixelBuffer.h"; sourceTree = "<group>"; };
 		31503A7B2410D4450029E506 /* UIView+PixelBuffer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIView+PixelBuffer.m"; sourceTree = "<group>"; };
 		31503A7D2410D9890029E506 /* UIColor+Extension.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIColor+Extension.h"; sourceTree = "<group>"; };
@@ -170,6 +173,8 @@
 			children = (
 				31503A832410EA3A0029E506 /* PushMetalViewController.h */,
 				31503A842410EA3A0029E506 /* PushMetalViewController.m */,
+				31112DAB2415DC22009665AE /* NMCLiveStreamingViewController.h */,
+				31112DAC2415DC22009665AE /* NMCLiveStreamingViewController.m */,
 			);
 			path = CollectTheView;
 			sourceTree = "<group>";
@@ -216,6 +221,7 @@
 					282112E41E6F9E8B0023FF1E = {
 						CreatedOnToolsVersion = 8.2.1;
 						DevelopmentTeam = 3WCZP48BJA;
+						LastSwiftMigration = 1130;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -261,10 +267,14 @@
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-WXH264Demo/Pods-WXH264Demo-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/LFLiveKit/LFLiveKit.framework",
+				"${PODS_ROOT}/NMCLiveStreaming_MINI/MINISDK/NMCBasicModuleFramework.framework",
+				"${PODS_ROOT}/NMCLiveStreaming_MINI/MINISDK/NMCLiveStreaming.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/LFLiveKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/NMCBasicModuleFramework.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/NMCLiveStreaming.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -300,9 +310,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				31112DAD2415DC22009665AE /* NMCLiveStreamingViewController.m in Sources */,
 				282112F01E6F9E8B0023FF1E /* ViewController.m in Sources */,
 				280345801E791BCF006E8163 /* WXAudioCapture.m in Sources */,
 				282112ED1E6F9E8B0023FF1E /* AppDelegate.m in Sources */,
+				31112DAE2416108E009665AE /* PushMetalViewController.m in Sources */,
 				282112EA1E6F9E8B0023FF1E /* main.m in Sources */,
 				31503A7F2410D9890029E506 /* UIColor+Extension.m in Sources */,
 				280345791E790F83006E8163 /* WXVideoEncoder.m in Sources */,
@@ -310,7 +322,6 @@
 				2803457D1E7911B7006E8163 /* WXAACEncoder.m in Sources */,
 				280345761E790F83006E8163 /* WXCAEAGLLayer.m in Sources */,
 				31503A7C2410D4450029E506 /* UIView+PixelBuffer.m in Sources */,
-				31503A852410EA3A0029E506 /* PushMetalViewController.m in Sources */,
 				280345771E790F83006E8163 /* WXVideoCapture.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -432,6 +443,7 @@
 			baseConfigurationReference = 3C8C5AF263331B98AC2FCD2F /* Pods-WXH264Demo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 3WCZP48BJA;
@@ -443,6 +455,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.xun.WXH264;
 				PRODUCT_NAME = WXH264Demo;
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
@@ -451,6 +465,7 @@
 			baseConfigurationReference = E5EBCA47D36E1E7B80086B28 /* Pods-WXH264Demo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 3WCZP48BJA;
@@ -462,6 +477,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.xun.WXH264;
 				PRODUCT_NAME = WXH264Demo;
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
 		};
