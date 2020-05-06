@@ -14,8 +14,9 @@
 {
     WXVideoCapture              *   wx_videoCapture;
     LSMediaCapture              *   lsMediaStream;
-    
+    UIImage                     *   image;
     BOOL isConnect;
+    int  index;
 }
 
 @property (nonatomic, strong) UIView *preView;
@@ -31,8 +32,17 @@
     _preView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.view.bounds.size.width, 200)];
     _preView.backgroundColor = UIColor.yellowColor;
     [self.view addSubview:_preView];
-    _timer = [NSTimer timerWithTimeInterval:1 repeats:YES block:^(NSTimer * _Nonnull timer) {
-        _preView.backgroundColor = [UIColor randomColor];
+    index = 0;
+    _timer = [NSTimer timerWithTimeInterval:5 repeats:YES block:^(NSTimer * _Nonnull timer) {
+//        _preView.backgroundColor = [UIColor randomColor];
+        if (index == 0) {
+            image = [UIImage imageNamed:@"test"];
+            index++;
+        } else {
+            image = [UIImage imageNamed:@"bg_login"];
+            index = 0;
+        }
+
     }];
     [[NSRunLoop currentRunLoop] addTimer:_timer forMode:NSDefaultRunLoopMode];
 
@@ -51,6 +61,11 @@
     button.backgroundColor = UIColor.redColor;
     [button addTarget:self action:@selector(start) forControlEvents:UIControlEventTouchUpInside];
         
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self
+    selector:@selector(backgroundStopLiveStream:)
+    name:UIApplicationDidEnterBackgroundNotification
+      object:nil];
 }
 
 - (void)start {
@@ -58,7 +73,7 @@
     LSVideoParaCtxConfiguration *videoParaCtx = [LSVideoParaCtxConfiguration defaultVideoConfiguration:LSVideoParamQuality_High1];
     videoParaCtx.isUseExternalCapture = YES;
     videoParaCtx.videoRenderMode = LS_VIDEO_RENDER_MODE_SCALE_NONE;
-    lsMediaStream = [[LSMediaCapture alloc] initLiveStream:@"rtmp://10.220.220.210:1935/zbcs/room" withVideoParaCtxConfiguration:videoParaCtx];
+    lsMediaStream = [[LSMediaCapture alloc] initLiveStream:@"rtmp://192.168.199.152:1935/zbcs/room" withVideoParaCtxConfiguration:videoParaCtx];
     [lsMediaStream startVideoPreview:self.preView];
     [lsMediaStream startLiveStream:^(NSError *error) {
         NSLog(@"%@",error);
@@ -83,20 +98,55 @@
         CMVideoFormatDescriptionRef videoInfo = NULL;
         
         CMSampleBufferRef sampleBuffer = NULL;
-        CVPixelBufferRef pixelBuffer = [_preView CVPixelBufferRef];
+//        CVPixelBufferRef pixelBuffer = [_preView CVPixelBufferRef];
         
-//        UIImage *image = [UIImage imageNamed:@"bg"];
-//        CVPixelBufferRef pixelBuffer = [_preView pixelBufferFromCGImage:image.CGImage];
+        CVPixelBufferRef pixelBuffer = [_preView pixelBufferFromCGImage:image.CGImage];
         
         CMVideoFormatDescriptionCreateForImageBuffer(NULL, pixelBuffer, &videoInfo);
         CMSampleBufferCreateForImageBuffer(kCFAllocatorDefault, pixelBuffer, true, NULL, NULL, videoInfo, &timimgInfo, &sampleBuffer);
         [lsMediaStream externalInputSampleBuffer:sampleBuffer];
         
-        CFRelease(pixelBuffer);
         CFRelease(sampleBuffer);
+        CVBufferRelease(pixelBuffer);
     });
 }
 
+- (void)backgroundStopLiveStream:(NSNotificationCenter *)notification {
+    UIApplication *app = [UIApplication sharedApplication];
+    
+    // 定义一个UIBackgroundTaskIdentifier类型(本质就是NSUInteger)的变量
+    // 该变量将作为后台任务的标识符
+    __block UIBackgroundTaskIdentifier backTaskId;
+    backTaskId = [app beginBackgroundTaskWithExpirationHandler:^{
+        NSLog(@"===在额外申请的时间内依然没有完成任务===");
+        // 结束后台任务
+        [app endBackgroundTask:backTaskId];
+    }];
+    if(backTaskId == UIBackgroundTaskInvalid){
+        NSLog(@"===iOS版本不支持后台运行,后台任务启动失败===");
+        return;
+    }
+    
+    // 将代码块以异步方式提交给系统的全局并发队列
+    dispatch_async(dispatch_get_main_queue(), ^{
+        NSLog(@"===额外申请的后台任务时间为: %f===",app.backgroundTimeRemaining);
+//        if(isConnect){
+//            // 其他内存清理的代码也可以在此处完成
+//            [lsMediaStream stopLiveStream:^(NSError *error) {
+//                if (error == nil) {
+//                    NSLog(@"退到后台的直播结束了");
+//                    isConnect = NO;
+//                    [app endBackgroundTask:backTaskId];
+//                }else{
+//                    NSLog(@"退到后台的结束直播发生错误");
+//                    [app endBackgroundTask:backTaskId];
+//                }
+//            }];
+//        }
+    });
+    
+    
+}
 
 
 @end

@@ -52,6 +52,7 @@
 		282113051E70150D0023FF1E /* PrefixHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.h; sourceTree = "<group>"; };
 		31112DAB2415DC22009665AE /* NMCLiveStreamingViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NMCLiveStreamingViewController.h; sourceTree = "<group>"; };
 		31112DAC2415DC22009665AE /* NMCLiveStreamingViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NMCLiveStreamingViewController.m; sourceTree = "<group>"; };
+		314865A2241789B30062A98D /* libc++.1.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.1.tbd"; path = "usr/lib/libc++.1.tbd"; sourceTree = SDKROOT; };
 		31503A7A2410D4450029E506 /* UIView+PixelBuffer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIView+PixelBuffer.h"; sourceTree = "<group>"; };
 		31503A7B2410D4450029E506 /* UIView+PixelBuffer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIView+PixelBuffer.m"; sourceTree = "<group>"; };
 		31503A7D2410D9890029E506 /* UIColor+Extension.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIColor+Extension.h"; sourceTree = "<group>"; };
@@ -182,6 +183,7 @@
 		AA258490A70462704A896805 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				314865A2241789B30062A98D /* libc++.1.tbd */,
 				A16CDFB912DC6B07E61FFA03 /* Pods_WXH264Demo.framework */,
 			);
 			name = Frameworks;
